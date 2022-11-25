@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(156, 215, 235);
+}
+
+h1 { /*title*/
+    color : black;
+    text-align: center;
+    font-size: 300%;
+}
+
+p { /*consigne*/
+    color: rgb(161, 51, 51);
+    text-align: center;
+    font-size: 15%; 
+}
+
+h4 {/*entrer nom*/
+    color: black;
+    text-align: center;
+    font-size: 150%;
+}
+
+h2 {/*start*/
+    color: brown;
+    text-align: center;
+    font-size: 200%;
+}
