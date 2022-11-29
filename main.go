@@ -8,42 +8,57 @@ import (
 
 const port = ":8080"
 
-func Accueil(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "accueil")
+func Accueil(rw http.ResponseWriter, r *http.Request) {
+	tmp, _ := template.ParseFiles("./templates/accueil.html")
+	tmp.Execute(rw, r)
 }
 
-func Connexion(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "connexion")
+func Connexion(rw http.ResponseWriter, r *http.Request) {
+	tmp, _ := template.ParseFiles("./templates/connexion.html")
+	tmp.Execute(rw, r)
 }
 
-func Jeu(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "jeu")
+func Jeu(rw http.ResponseWriter, r *http.Request) {
+	tmp, _ := template.ParseFiles("./templates/jeu.html")
+	tmp.Execute(rw, r)
 }
 
-func Victoire(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "victoire")
+func Defaite(rw http.ResponseWriter, r *http.Request) {
+	tmp, _ := template.ParseFiles("./templates/defaite.html")
+	tmp.Execute(rw, r)
 }
 
-func Defaite(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "defaite")
-}
-
-func renderTemplate(w http.ResponseWriter, tmpl string) {
-	t, err := template.ParseFiles("./templates/" + tmpl + ".page.tmpl")
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-	t.Execute(w, nil)
-
+func Victoire(rw http.ResponseWriter, r *http.Request) {
+	tmp, _ := template.ParseFiles("./templates/victoire.html")
+	tmp.Execute(rw, r)
 }
 
 func main() {
-	http.HandleFunc("/", Accueil)
-	http.HandleFunc("/login", Connexion)
-	http.HandleFunc("/game", Jeu)
-	http.HandleFunc("/game/win", Victoire)
-	http.HandleFunc("/game/lose", Defaite)
+	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+		Accueil(rw, r)
+	})
+
+	http.HandleFunc("/login", func(rw http.ResponseWriter, r *http.Request) {
+		Connexion(rw, r)
+	})
+
+	http.HandleFunc("/game", func(rw http.ResponseWriter, r *http.Request) {
+		Jeu(rw, r)
+	})
+
+	http.HandleFunc("/game/win", func(rw http.ResponseWriter, r *http.Request) {
+		Victoire(rw, r)
+	})
+
+	http.HandleFunc("/game/lose", func(rw http.ResponseWriter, r *http.Request) {
+		Defaite(rw, r)
+	})
+
+	fs := http.FileServer(http.Dir("./static/"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
+	rs := http.FileServer(http.Dir("./image/"))
+	http.Handle("/image/", http.StripPrefix("/image/", rs))
 
 	fmt.Println("(http://localhost:8080) - Serveur démarré sur le port", port)
 	http.ListenAndServe(port, nil)

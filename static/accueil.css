@@ -1,24 +1,25 @@
-.body {
-    background-color: red;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.h1 { /*title*/
+h1 { /*title*/
     color : black;
     text-align: center;
     font-size: 300%;
 }
 
-.p { /*consigne*/
+p { /*consigne*/
     color: rgb(51, 161, 93);
     text-align: center;
     font-size: 15%; 
 }
-.body {
+body {
     text-align: center;
     background-color: whitesmoke;
 }
 
-.bruh {
+.bouton {
     text-align: justify;
     
 }
