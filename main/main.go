@@ -10,7 +10,7 @@ import (
 )
 
 func HandleHomePage(rw http.ResponseWriter, r *http.Request, str *hangman.HangData) {
-	tmp, _ := template.ParseFiles("asset/pagehtml/hangman2.html")
+	tmp, _ := template.ParseFiles(".html")
 	tmp.Execute(rw, str)
 }
 
@@ -29,13 +29,13 @@ func main() {
 
 	Hang := &hangman.HangData{}
 
-	// http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-	// 	InitialiseStruct(Pts)
+	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+		InitialiseStruct(Hang)
 
-	// 	HandleHomePage(rw, r, Pts)
-	// })
+		HandleHomePage(rw, r, Hang)
+	})
 
-	// http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", nil)
 	//======
 
 	InitialiseStruct(Hang)
