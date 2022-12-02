@@ -27,7 +27,7 @@ func main() {
 	//====== WEB SERVER
 	fmt.Printf("Starting server at port 8080\n")
 
-	Pts := &hangman.HangData{}
+	Hang := &hangman.HangData{}
 
 	// http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
 	// 	InitialiseStruct(Pts)
@@ -38,7 +38,7 @@ func main() {
 	// http.ListenAndServe(":8080", nil)
 	//======
 
-	InitialiseStruct(Pts)
+	InitialiseStruct(Hang)
 
 	//fmt.Println(tab_words[nbr_words], "<--//===============TEST=imprime le mot du jeu
 	//fmt.Println(to_found_RuneVersion, "<--//===============TEST=mot à trouver version rune
@@ -47,9 +47,9 @@ func main() {
 	var want_play bool
 	want_play = true
 	respond := bufio.NewScanner(os.Stdin)
-	InitialiseStruct(Pts)
+	InitialiseStruct(Hang)
 	for {
-		hangman.Game(Pts)
+		hangman.Game(Hang)
 		fmt.Printf("Continuer à joue ? O/N")
 		respond.Scan()
 		respond := respond.Text()
