@@ -34,6 +34,8 @@ func Victoire(rw http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fmt.Println("(http://localhost:8080) - Serveur démarré sur le port", port)
+
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
 		Accueil(rw, r)
 	})
@@ -60,7 +62,6 @@ func main() {
 	rs := http.FileServer(http.Dir("./image/"))
 	http.Handle("/image/", http.StripPrefix("/image/", rs))
 
-	fmt.Println("(http://localhost:8080) - Serveur démarré sur le port", port)
 	http.ListenAndServe(port, nil)
 
 }

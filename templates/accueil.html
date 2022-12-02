@@ -6,34 +6,39 @@
         <link rel="stylesheet" href="../static/accueil.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../image/giacomo-vettori-emil1.jpg">
         <title>Hangman</title>
     </head>
     <header>
-        <h1>Hangman</h1>
     </header>
     <body>
-        <div class= "consigne">
-            <p> Sauve José !<br>
-            José est sur le point de se faire pendre ! Mais les juges qui avaient trop bu la veille ont décidés de lui faire une fleur pour rigoler. 
-            Si l'un des spectateurs (vous !) réussissez à trouver le mot caché des juges, vous serez en mesure de sauver José ! 
-            <pre>ᕙ(⇀‸↼‶) ᕗ</pre>
-            Seriez-vous assez brave pour sortir José de cette mauvaise passe ? Les juges vous offre quelques possibilités :<br>
-            <ol>
-            <li>Vous avez le droit à une lettre indice au tout début du jeu qui apparaîtra de manière totalement alétoire.<br>
-            /!\ Cette lettre peut être à nouveau présente dans le mot.</li><br>
-            <li>Vous avez 10 chances de sauver le pauvre malheureux !</li>
-            <pre>( ♨ w ♨ )/</pre>
-            <li>Vous n'avez pas le droit d'entrer le mot en entier sous peine de perdre une chance.</li> 
-            <pre>( ๑˃̣̣̥ ⌓ ˂̣̣̥ )</pre>
-            <li>Vous perdez une vie si vous avez déjà entré une lettre qui était fausse.</li><br>
-            Bonne chance camarade 
-            <pre>ᕦ( ▀̿ Ĺ̯ ▀̿(</pre> 
-            </p>
+        <div class = "parent">
+        <div class = "gauche">
+            <div class = "contexte">
+                <h1>Hangman</h1>
+                <span class="encadrer-un-contenu">Sauve José !<br>
+                    José est sur le point de se faire pendre ! Mais les juges qui avaient trop bu la veille ont décidés de lui faire une fleur pour rigoler. 
+                    Si l'un des spectateurs (vous !) réussissez à trouver le mot caché des juges, vous serez en mesure de sauver José !
+                    Seriez-vous assez brave pour sortir José de cette mauvaise passe ? Les juges vous offre quelques possibilités.<br>
+                    Bonne chance camarade.</span>
+            </div>
         </div>
-        <div class = bouton> 
-            <input>entrer nom</input>
-            <button>Ok</button><br>
-            <button>Start!</button>
+        <div class = "droite">
+            <div class = "consigne">
+                <ol>
+                    <li>Vous avez le droit à une lettre indice au tout début du jeu qui apparaîtra de manière totalement alétoire.<br>
+                    /!\ Cette lettre peut être à nouveau présente dans le mot.</li><br>
+                    <li>Vous avez 10 chances de sauver le pauvre malheureux !</li>
+                    <li>Vous n'avez pas le droit d'entrer le mot en entier sous peine de perdre une chance.</li><br>
+                </ol>
+            </div>
+            <div class = "jetevois"></div>
+            <div class="bouton">
+                <a href="/game">
+                    <input type="button" value="Jouer" />
+                </a>
+            </div>
+        </div>
         </div>
     </body>
 </html>

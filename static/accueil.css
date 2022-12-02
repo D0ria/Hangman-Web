@@ -3,23 +3,58 @@ body {
     padding: 0;
 }
 
-h1 { /*title*/
-    color : black;
-    text-align: center;
-    font-size: 300%;
+.parent{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
-p { /*consigne*/
-    color: rgb(51, 161, 93);
-    text-align: center;
-    font-size: 15%; 
+.gauche {
+    height: 100vh;
+    width: 50%;
+    background : black;
+    margin-right: 5px;
 }
-body {
+
+.droite {
+    height: 100vh;
+    width: 50%;
+    background : black;
+}
+
+.contexte p {
+    font-size: 110%;
+    color: white;
     text-align: center;
-    background-color: whitesmoke;
+}
+  
+.consigne ol {
+    text-align: center;
+    font-size: 110%;
+    color: white;
 }
 
 .bouton {
-    text-align: justify;
+    display: flex;
+    justify-content:center;
     
+}
+
+.encadrer-un-contenu{ 
+    border: 1px solid white; 
+    padding: 5px;
+    font-size: 110%;
+    color: white;
+    text-align: center;
+}
+
+.jetevois {
+    background-image: url(../image/giacomo-vettori-emil1.jpg) ;
+    background-size: cover;
+    height:300px;
+    width:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }

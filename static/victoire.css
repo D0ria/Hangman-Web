@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.parent{
+    width: 100%;
+    background-color: black;
+}
+
+.illustration {
+    background-image: url(../image/menotte\ cassée.png) ;
+    background-size: cover;
+    height:300px;
+    width:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message p {
+    color : white;
+}
+
+.aurevoir p {
+    color : white;
+}
