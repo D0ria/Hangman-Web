@@ -13,11 +13,6 @@ func Accueil(rw http.ResponseWriter, r *http.Request) {
 	tmp.Execute(rw, r)
 }
 
-func Connexion(rw http.ResponseWriter, r *http.Request) {
-	tmp, _ := template.ParseFiles("./templates/connexion.html")
-	tmp.Execute(rw, r)
-}
-
 func Jeu(rw http.ResponseWriter, r *http.Request) {
 	tmp, _ := template.ParseFiles("./templates/jeu.html")
 	tmp.Execute(rw, r)
@@ -40,10 +35,6 @@ func main() {
 		Accueil(rw, r)
 	})
 
-	http.HandleFunc("/login", func(rw http.ResponseWriter, r *http.Request) {
-		Connexion(rw, r)
-	})
-
 	http.HandleFunc("/game", func(rw http.ResponseWriter, r *http.Request) {
 		Jeu(rw, r)
 	})
@@ -63,5 +54,4 @@ func main() {
 	http.Handle("/image/", http.StripPrefix("/image/", rs))
 
 	http.ListenAndServe(port, nil)
-
 }
