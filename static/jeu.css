@@ -9,3 +9,11 @@ body {
     background-color:black ;
     height: 100vh;
    }
+
+.illustration {
+  background-image: url(../image/giacomo-vettori-emil1.jpg);
+}
+
+.tips {
+  color: white;
+}
