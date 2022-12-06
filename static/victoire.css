@@ -30,6 +30,10 @@ body {
     color : white;
 }
 
+.bouton2 span {
+    font-family: "plasdrip";
+}
+
 /*Bouton Rejouer*/
 .bouton2 {
     display: flex;

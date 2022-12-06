@@ -53,5 +53,8 @@ func main() {
 	rs := http.FileServer(http.Dir("./image/"))
 	http.Handle("/image/", http.StripPrefix("/image/", rs))
 
+	ts := http.FileServer(http.Dir("./dafont/"))
+	http.Handle("/dafont/", http.StripPrefix("/dafont/", ts))
+
 	http.ListenAndServe(port, nil)
 }

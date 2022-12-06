@@ -1,3 +1,20 @@
+/*Police d'écriture*/
+@font-face {
+    font-family: "halloween day's";
+    src: url("../dafont/halloween\ day\'s.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "plasdrip";
+    src: url("../dafont/bloody.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Halloween party demo";
+    src: url("../dafont/title.ttf") format("truetype");
+}
+
+
 /*Réglage du corps principal de la page*/
 body {
     margin: 0;
@@ -9,7 +26,7 @@ body {
     flex-direction: row;
     width: 100%;
 }
-/*Réglage div gauche, droite et inférieure gauche*/ 
+/*Réglage des divs de position*/ 
 .gauche {
     height: 100vh;
     width: 50%;
@@ -19,8 +36,12 @@ body {
 
 .droite {
     height: 100vh;
+    min-height: fit-content;
     width: 50%;
     background : black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bottom {
@@ -32,11 +53,13 @@ body {
 
 /*Texte*/
 .contexte h1 {
+    font-family: "Halloween party demo";
     font-size: 300%;
     color: white;
     text-align: center;
     margin: 0;
     margin-top: 5vh;
+    
 }
   
 .consigne ol {
@@ -47,7 +70,8 @@ body {
     padding: 25px;
 }
 
-.regle{ 
+.regle p{ 
+    font-family: "halloween day's";
     border: 1px solid white; 
     padding:5px;
     font-size: 110%;
@@ -57,9 +81,8 @@ body {
 }
 
 /*Bouton Jouer*/
-.bouton {
-    display: flex;
-    align-items: center;
+.bouton{
+    align-self: center;
 }
 
 .bouton2 {
@@ -76,6 +99,10 @@ body {
     width: 100px;
 }
 
+.bouton2 span {
+    font-family: "plasdrip";
+}
+
 /*Mise en forme de l'image*/
 .jetevois {
     background-image: url(../image/molly-mills-emil.jpg) ;
@@ -83,3 +110,5 @@ body {
     height:300px;
     width:500px;
 }
+
+
