@@ -54,7 +54,7 @@ body {
 /*Texte*/
 .contexte h1 {
     font-family: "Halloween party demo";
-    font-size: 600%;
+    font-size: 110px;
     color: white;
     text-align: center;
     margin: 0;
@@ -71,13 +71,20 @@ body {
     padding: 25px;
 }
 
+.regle {
+    display: flex;
+    align-items: center;
+    height: 40vh;
+}
+
 .regle p{ 
     font-family: "halloween day's";
     border: 1px solid white; 
     padding:5px;
-    font-size: 110%;
+    font-size: 25px;
     color: white;
     text-align: center;
+    vertical-align: middle;
     height:fit-content;
 }
 
@@ -107,7 +114,7 @@ body {
 /*Mise en forme de l'image*/
 .jetevois {
     background-image: url(../image/molly-mills-emil.jpg) ;
-    background-size:contain;
+    background-size:cover;
     height:300px;
     width:450px;
 }
