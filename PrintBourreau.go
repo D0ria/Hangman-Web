@@ -7,15 +7,15 @@ import (
 )
 
 func PrintBourreau(life int) {
-	// open the file
+	// ouvre le fichier
 	file, _ := os.Open("bourreau.txt") //ouverture bourreau.txt
 
 	fileScanner := bufio.NewScanner(file) //flux bourreau.txt
 
-	var hangmanPositions [10]string //stocke chaque position
+	var hangmanPositions [10]string //stock chaque position
 	var res string
 	index := 9
-	// read line by line
+	// lecture ligne par ligne
 	for fileScanner.Scan() {
 		if fileScanner.Text() != "" {
 			res += fileScanner.Text() + "\n"
@@ -26,9 +26,5 @@ func PrintBourreau(life int) {
 		}
 	}
 	fmt.Println()
-
-	// for , v := range hangmanPositions {
-	//     fmt.Println(v)
-	// }
 	fmt.Println(hangmanPositions[life])
 }

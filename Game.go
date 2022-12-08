@@ -14,7 +14,7 @@ func Game(Hang *HangData) {
 
 	Hang.Correct = false
 
-	for j := 0; j < len(Hang.To_found); j++ { //lettre detector, change egalement le mot révélé selon les lettres trouver
+	for j := 0; j < len(Hang.To_found); j++ { //lettre detecté, change également le mot révélé selon les lettres trouvées
 		if Hang.Input_Letter == (string(Hang.To_found[j])) {
 			Hang.Correct = true
 			Hang.Founded[j] = (rune(Hang.Input_Letter[0]))

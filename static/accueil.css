@@ -51,7 +51,7 @@ body {
     align-items: center;
 }
 
-/*Texte*/
+/*style et positionnement du texte*/
 .contexte h1 {
     font-family: "Halloween party demo";
     font-size: 110px;
@@ -80,7 +80,7 @@ body {
     font-family: "halloween day's";
     border: 1px solid white; 
     padding:5px;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     text-align: center;
     vertical-align: middle;

@@ -24,6 +24,11 @@ body {
   height: 100vh;
  }
 
+ .top {
+  height: fit-content;
+  align-self: center;
+}
+
  /*Mise en forme des images*/
  .lapin {
   background-image: url("../image/lapin_pendu.jpg");
@@ -45,7 +50,7 @@ body {
   justify-content: flex-end;
  }
 
- /*Texte*/
+ /*style du texte*/
 .rip h1 {
   font-family: "halloween day's";
   font-size: 300%;
@@ -76,8 +81,3 @@ body {
   font-family: "plasdrip";
 }
 
-.top {
-  /* display: flex; */
-  height: fit-content;
-  align-self: center;
-}
