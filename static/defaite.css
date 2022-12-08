@@ -4,6 +4,12 @@
   src: url("../dafont/bloody.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "halloween day's";
+  src: url("../dafont/halloween\ day\'s.ttf") format("truetype");
+}
+
+
 /*Réglage du corps principal de la page*/
 body {
   margin: 0;
@@ -41,6 +47,7 @@ body {
 
  /*Texte*/
 .rip h1 {
+  font-family: "halloween day's";
   font-size: 300%;
   color: white;
   margin-left: 5%;

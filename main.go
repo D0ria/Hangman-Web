@@ -2,37 +2,14 @@ package main
 
 import (
 	"fmt"
+	"hangman"
 	"html/template"
 	"net/http"
 
 	hangman "hangman/hangman"
 )
 
-type HangData struct {
-	Life                 int
-	Founded              []rune
-	To_found             string
-	To_found_RuneVersion []rune
-	Correct              bool
-	Founded_RuneVersion  string
-	TabURL               []string
-}
-
 const port = ":8080"
-
-func InitialiseStruct(Pts *hangman.HangData) {
-	Pts.Life = 10
-	Pts.To_found = hangman.WordSelector()
-	Pts.Founded = hangman.Founded(Pts.To_found)
-	Pts.To_found_RuneVersion = hangman.StringToSliceRune(Pts.To_found)
-	Pts.Correct = false
-	Pts.Founded_RuneVersion = hangman.SliceRuneToString(Pts.Founded)
-}
-
-func HandleHomePage(rw http.ResponseWriter, r *http.Request, str *hangman.HangData) {
-	tmp, _ := template.ParseFiles("http://localhost:8080")
-	tmp.Execute(rw, str)
-}
 
 func Accueil(rw http.ResponseWriter, r *http.Request) {
 	tmp, _ := template.ParseFiles("./templates/accueil.html")
@@ -55,6 +32,19 @@ func Victoire(rw http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	func InitialiseStruct(Pts *hangman.HangData) {
+		Pts.Life = 10
+		Pts.To_found = hangman.WordSelector()
+		Pts.Founded = hangman.Founded(Pts.To_found)
+		Pts.To_found_RuneVersion = hangman.StringToSliceRune(Pts.To_found)
+		Pts.Correct = false
+		Pts.Founded_RuneVersion = hangman.SliceRuneToString(Pts.Founded)
+	}
+	
+	HangPts := HangData{10,"","","","",""}
+	InitialiseStruct(Pts)
+
 	fmt.Println("(http://localhost:8080) - Serveur démarré sur le port", port)
 
 	// var data = Page{"Hangman-Web ", Founded_RuneVersion, tabURL[Life], Life, string(To_found_RuneVersion), string(Founded_RuneVersion), Correct, To_found  , Founded} //actualisation de la variable data
@@ -83,6 +73,13 @@ func main() {
 
 	ts := http.FileServer(http.Dir("./dafont/"))
 	http.Handle("/dafont/", http.StripPrefix("/dafont/", ts))
+
+	http.HandleFunc("/hangman", func(rw http.ResponseWriter, r *http.Request) {
+		Pts.InputLetter = r.FormValue("letter")
+		Equal(Pts)
+		Founded(Equal(Pts), Pts)
+		htp.Redirect(rw, r, "/", http.StatusFound)
+	})
 
 	http.ListenAndServe(port, nil)
 }

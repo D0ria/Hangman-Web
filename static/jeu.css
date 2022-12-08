@@ -1,19 +1,58 @@
+/*Police d'écriture*/
+@font-face {
+  font-family: "halloween day's";
+  src: url("../dafont/halloween\ day\'s.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Halloween party demo";
+  src: url("../dafont/title.ttf") format("truetype");
+}
+
 /*Réglage du corps principal de la page*/
 body {
     margin: 0;
     padding: 0;
-  }
+}
   
-   .parent{
+.parent {
     width: 100%;
     background-color:black ;
     height: 100vh;
    }
 
-.illustration {
-  background-image: url(../image/giacomo-vettori-emil1.jpg);
+.top {
+    height: 50vh;
+    width: 100%;
+    background : black;
+    margin-right: 5px;
 }
 
-.tips {
+.bottom {
+    height: 50vh;
+    min-height: fit-content;
+    width: 100%;
+    background : black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Texte*/
+.tips p {
+  font-family: "halloween day's";
   color: white;
+}
+
+.tips h1 {
+  font-family: "Halloween party demo";
+  color: white;
+}
+
+/*Image*/
+.jetobserve {
+  background-image: url(../image/giacomo-vettori-emil1.jpg) ;
+  background-size:cover;
+  height:300px;
+  width:450px;
 }
