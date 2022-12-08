@@ -1,5 +1,4 @@
 /*Police d'écriture*/
-
 @font-face {
   font-family: "halloween day's";
   src: url("../dafont/halloween\ day\'s.ttf") format("truetype");
@@ -14,14 +13,32 @@
 body {
     margin: 0;
     padding: 0;
-  }
+}
   
-   .parent{
+.parent {
     width: 100%;
     background-color:black ;
     height: 100vh;
    }
 
+.top {
+    height: 50vh;
+    width: 100%;
+    background : black;
+    margin-right: 5px;
+}
+
+.bottom {
+    height: 50vh;
+    min-height: fit-content;
+    width: 100%;
+    background : black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Texte*/
 .tips p {
   font-family: "halloween day's";
   color: white;
@@ -31,6 +48,8 @@ body {
   font-family: "Halloween party demo";
   color: white;
 }
+
+/*Image*/
 .jetobserve {
   background-image: url(../image/giacomo-vettori-emil1.jpg) ;
   background-size:cover;

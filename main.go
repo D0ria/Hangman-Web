@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"hangman"
 	"html/template"
 	"net/http"
 )
 
-const port = ":8080"
+const port = ":8080" /*affiliation du site à un port*/
 
+/*Création de fonction qui liera nos templates*/
 func Accueil(rw http.ResponseWriter, r *http.Request) {
 	tmp, _ := template.ParseFiles("./templates/accueil.html")
 	tmp.Execute(rw, r)
@@ -29,6 +31,19 @@ func Victoire(rw http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	func InitialiseStruct(Pts *hangman.HangData) {
+		Pts.Life = 10
+		Pts.To_found = hangman.WordSelector()
+		Pts.Founded = hangman.Founded(Pts.To_found)
+		Pts.To_found_RuneVersion = hangman.StringToSliceRune(Pts.To_found)
+		Pts.Correct = false
+		Pts.Founded_RuneVersion = hangman.SliceRuneToString(Pts.Founded)
+	}
+	
+	HangPts := HangData{10,"","","","",""}
+	InitialiseStruct(Pts)
+
 	fmt.Println("(http://localhost:8080) - Serveur démarré sur le port", port)
 
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
@@ -55,6 +70,13 @@ func main() {
 
 	ts := http.FileServer(http.Dir("./dafont/"))
 	http.Handle("/dafont/", http.StripPrefix("/dafont/", ts))
+
+	http.HandleFunc("/hangman", func(rw http.ResponseWriter, r *http.Request) {
+		Pts.InputLetter = r.FormValue("letter")
+		Equal(Pts)
+		Founded(Equal(Pts), Pts)
+		htp.Redirect(rw, r, "/", http.StatusFound)
+	})
 
 	http.ListenAndServe(port, nil)
 }
