@@ -15,6 +15,10 @@ body {
     padding: 0;
 }
   
+.infos {
+  color: white;
+}
+
 .parent {
     width: 100%;
     background-color:black ;
