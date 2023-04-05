@@ -1,0 +1,11 @@
+/*Réglage du corps principal de la page*/
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+   .parent{
+    width: 100%;
+    background-color:black ;
+    height: 100vh;
+   }

@@ -1,0 +1,46 @@
+/*Réglage du corps principal de la page*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.parent{
+    width: 100%;
+    background-color: black;
+    height: 100vh;
+}
+
+/*Mise en page de l'image*/
+.illustration {
+    background-image: url(../image/menotte\ cassée.png) ;
+    background-size: cover;
+    height:300px;
+    width:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Texte*/
+.message p {
+    color : white;
+}
+
+.aurevoir p {
+    color : white;
+}
+
+/*Bouton Rejouer*/
+.bouton2 {
+    display: flex;
+    justify-content:center;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    border: 4px double black;
+    color:black;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 100px;
+}

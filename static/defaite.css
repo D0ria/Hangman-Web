@@ -1,0 +1,83 @@
+/*Police d'écriture*/
+@font-face {
+  font-family: "plasdrip";
+  src: url("../dafont/bloody.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "halloween day's";
+  src: url("../dafont/halloween\ day\'s.ttf") format("truetype");
+}
+
+
+/*Réglage du corps principal de la page*/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ .parent{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color:black ;
+  height: 100vh;
+ }
+
+ .top {
+  height: fit-content;
+  align-self: center;
+}
+
+ /*Mise en forme des images*/
+ .lapin {
+  background-image: url("../image/lapin_pendu.jpg");
+  background-size: cover;
+  height:300px;
+  width:300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .cheh {
+  background-image: url("../image/emil-scary-face.jpg") ;
+  background-size:cover;
+  height: 180px;
+  width: 250px;
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+ }
+
+ /*style du texte*/
+.rip h1 {
+  font-family: "halloween day's";
+  font-size: 300%;
+  color: white;
+  margin-left: 5%;
+}
+
+/*Bouton rejouer*/
+.bouton {
+  align-self: center;
+}
+
+.bouton2 {
+  display: flex;
+  justify-content:center;
+  display: inline-block;
+  background-color: white;
+  border-radius: 10px;
+  border: 4px double black;
+  color:black;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100px;
+}
+
+.bouton2 span {
+  font-family: "plasdrip";
+}
+
